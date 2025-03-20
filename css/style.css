@@ -1,6 +1,18 @@
 @charset "UTF-8";
 @import url(reset.css);
 @import url(font.css);
+/* 공통 */
+.btn_read {
+  background: #151515;
+  color: #f5f5f5;
+  margin-top: 3rem;
+  padding: 1rem 2.4rem;
+}
+.btn_read.white {
+  background: #f5f5f5;
+  color: #151515;
+}
+
 html {
   font-size: 10px;
 }
@@ -92,12 +104,15 @@ header .centerbox .top_box .language_box .language::before {
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 0.5rem;
+  position: absolute;
+  left: -1.5rem;
 }
 header .centerbox .top_box .language_box .option {
   flex-direction: column;
   position: absolute;
-  right: -2.4rem;
-  top: 1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
   box-sizing: border-box;
   padding: 1rem 2rem;
   background: #f5f5f5;
@@ -108,6 +123,8 @@ header .centerbox .top_box .language_box .option {
 }
 header .centerbox .top_box .language_box .option a {
   margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid transparent;
 }
 header .centerbox .top_box .language_box .option a:hover {
   border-bottom: 1px solid #6d6d6d;
@@ -123,27 +140,30 @@ header .centerbox .pc_nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.8rem;
 }
 header .centerbox .pc_nav .icon_box {
   display: flex;
   padding: 1.5rem 0;
+  align-items: center;
 }
 header .centerbox .pc_nav .icon_box .icon_menu {
   width: 100%;
   margin-right: 2.4rem;
 }
 header .centerbox .pc_nav .icon_box .icon_Magnifyingglass {
+  display: none;
   width: 100%;
 }
 header .centerbox .pc_nav .gnb {
   display: flex;
   margin-left: auto;
-  margin-bottom: 3.8rem;
   position: relative;
 }
 header .centerbox .pc_nav .gnb > li > a {
   display: block;
-  padding: 1.3rem 3.2rem 0 3.2rem;
+  padding: 1.3rem 3.2rem;
   font-size: 2rem;
 }
 header .centerbox .pc_nav .gnb > li:last-child a {
@@ -161,18 +181,19 @@ header .centerbox .pc_nav .gnb li ul.lnb {
   width: 100%;
   display: none;
   z-index: 3;
+  padding-top: 3.7rem;
 }
 header .centerbox .pc_nav .gnb li ul.lnb li {
-  padding: 1rem 1.8rem;
   display: block;
   font-family: "Pretendard-Thin";
 }
 header .centerbox .pc_nav .gnb li ul.lnb li a {
+  display: block;
+  padding: 1rem 1.8rem;
   font-size: 1.8rem;
   font-family: "Pretendard-ExtraLight";
-  height: 4.1rem;
 }
-header .centerbox .pc_nav .gnb li ul.lnb li a:hover {
+header .centerbox .pc_nav .gnb li ul.lnb li a:hover span {
   border-bottom: 1px solid #6d6d6d;
 }
 header .centerbox .pc_nav .gnb li ul.lnb li strong {
@@ -184,9 +205,6 @@ header .centerbox .pc_nav .gnb li ul.lnb li strong:hover {
   background: #f5f5f5;
   border: 1px solid #151515;
   color: #151515;
-}
-header .centerbox .pc_nav .gnb li ul.lnb li:first-child {
-  padding-top: 3.7rem;
 }
 header .centerbox .pc_nav .lnb_bg {
   position: absolute;
@@ -207,6 +225,7 @@ header .centerbox h1 {
 }
 
 #visual {
+  margin-bottom: 10rem;
   width: 100%;
   overflow: hidden;
 }
@@ -230,6 +249,7 @@ header .centerbox h1 {
   /* 활성화된 색상 */
 }
 #visual .centerbox {
+  display: none;
   position: relative;
 }
 #visual .centerbox .subscribebox {
@@ -282,7 +302,6 @@ header .centerbox h1 {
 }
 #section1 .centerbox h2 {
   font-size: 3.6rem;
-  text-indent: 2rem;
   margin-bottom: 5rem;
   font-family: "Pretendard-Regular";
 }
@@ -300,23 +319,21 @@ header .centerbox h1 {
 #section1 .centerbox .today .item a .title {
   display: flex;
   justify-content: space-between;
+  height: 5em;
+  align-items: center;
 }
 #section1 .centerbox .today .item a .title h3 {
   max-width: 50rem;
-  font-size: 2.5rem;
-  text-indent: 2rem;
-  margin-top: 2rem;
+  font-size: 2.4rem;
   margin-bottom: 1rem;
   font-family: "Pretendard-Light";
 }
 #section1 .centerbox .today .item a .title .date {
-  margin-top: 2rem;
   font-size: 1.6rem;
   color: #717171;
 }
 #section1 .centerbox .today .item a .content {
   font-size: 1.8rem;
-  margin-left: 2rem;
 }
 #section1 .centerbox .today .item:nth-child(1) {
   position: relative;
@@ -328,9 +345,10 @@ header .centerbox h1 {
      object-fit: cover;
 }
 #section1 .centerbox .today .item:nth-child(1) a .title {
-  margin-right: 1rem;
+  padding: 0 1rem;
   position: absolute;
   display: flex;
+  height: auto;
   bottom: 2rem;
   flex-direction: column;
   color: rgba(245, 245, 245, 0.95);
@@ -374,7 +392,6 @@ header .centerbox h1 {
 }
 #section2 .centerbox .contentbox h2 {
   font-size: 3.6rem;
-  text-indent: 2rem;
   margin-bottom: 5rem;
   font-family: "Pretendard-Regular";
   text-indent: 0;
@@ -387,7 +404,6 @@ header .centerbox h1 {
 }
 #section2 .centerbox .contentbox .title {
   font-size: 3.6rem;
-  text-indent: 2rem;
   margin-bottom: 5rem;
   font-family: "Pretendard-Regular";
   text-indent: 0;
@@ -401,28 +417,10 @@ header .centerbox h1 {
 #section2 .centerbox .contentbox .content {
   width: 62.7rem;
   font-size: 1.8rem;
-  margin-left: 2rem;
   margin-left: 0;
   color: #f5f5f5;
   font-family: "Pretendard-ExtraLight";
   line-height: 1.7;
-}
-#section2 .centerbox .contentbox .btn_read {
-  width: 6.5rem;
-  height: 3rem;
-  background: #151515;
-  color: #f5f5f5;
-  background: #f5f5f5;
-  color: #151515;
-  margin-right: 2rem;
-  margin-top: 3rem;
-}
-#section2 .centerbox .contentbox .btn_read::before {
-  content: "Read";
-  font-size: 1.8rem;
-  display: block;
-  text-align: center;
-  line-height: 3rem;
 }
 #section2 .centerbox .magazine {
   display: grid;
@@ -445,16 +443,11 @@ header .centerbox h1 {
   width: 16rem;
   height: 21.9rem;
 }
-#section2 .centerbox .magazine li .tap img:hover {
-  animation: moveTop 1s ease-in-out forwards;
+#section2 .centerbox .magazine li .tap img {
+  transition: 1s;
 }
-@keyframes moveTop {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-12rem);
-  }
+#section2 .centerbox .magazine li .tap img:hover {
+  transform: translateY(-12rem);
 }
 #section2 .centerbox .magazine li .btn_last {
   font-size: 2rem;

@@ -11,6 +11,15 @@ $lineStyle1: 1px solid #d8d8d8;
 
 
 
+/* 공통 */
+.btn_read {
+    @include btn_read;
+    &.white {background: #f5f5f5;
+        color: #151515;
+    }
+}
+
+
 
 html {
     font-size: 10px;
@@ -111,6 +120,8 @@ header {
                         background-size: contain;
                         background-repeat: no-repeat;
                         margin-right: 0.5rem;
+                        position: absolute;
+                        left: -1.5rem;
                     }
 
 
@@ -119,8 +130,9 @@ header {
                 .option {
                     flex-direction: column;
                     position: absolute;
-                    right: -2.4rem;
-                    top: 1.8rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 100%;
                     // border: 1px solid #6d6d6d;
                     box-sizing: border-box;
                     padding: 1rem 2rem;
@@ -132,7 +144,10 @@ header {
 
                     a {
                         margin-bottom: 0.5rem;
-
+                        padding: .5rem 1rem;
+                        
+                        border-bottom: 1px solid transparent;
+                        
                         &:hover {
                             border-bottom: 1px solid #6d6d6d;
                             box-sizing: border-box;
@@ -156,17 +171,20 @@ header {
             width: 100%;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3.8rem;
 
             .icon_box {
                 display: flex;
                 padding: 1.5rem 0;
+                align-items: center;
 
                 .icon_menu {
                     width: 100%;
                     margin-right: 2.4rem;
                 }
 
-                .icon_Magnifyingglass {
+                .icon_Magnifyingglass {display: none;
                     width: 100%;
                 }
             }
@@ -174,12 +192,12 @@ header {
             .gnb {
                 display: flex;
                 margin-left: auto;
-                margin-bottom: 3.8rem;
+
                 position: relative;
 
                 >li>a {
                     display: block;
-                    padding: 1.3rem 3.2rem 0 3.2rem;
+                    padding: 1.3rem 3.2rem;
                     font-size: 2rem;
                 }
 
@@ -199,18 +217,19 @@ header {
                         width: 100%;
                         display: none;
                         z-index: 3;
+                        padding-top: 3.7rem;
 
                         li {
-                            padding: 1.0rem 1.8rem;
                             display: block;
                             font-family: 'Pretendard-Thin';
 
-                            a {
+                            a {display: block;
+                                padding: 1.0rem 1.8rem;
                                 font-size: 1.8rem;
                                 font-family: 'Pretendard-ExtraLight';
-                                height: 4.1rem;
+                                // height: 4.1rem;
 
-                                &:hover {
+                                &:hover span {
                                     border-bottom: 1px solid #6d6d6d;
                                 }
                             }
@@ -228,9 +247,9 @@ header {
                             }
                         }
 
-                        li:first-child {
-                            padding-top: 3.7rem;
-                        }
+                        // li:first-child {
+                        //     padding-top: 3.7rem;
+                        // }
                     }
                 }
 
@@ -260,7 +279,7 @@ header {
     }
 }
 
-#visual {
+#visual {margin-bottom: 10rem;
     width: 100%;
     overflow: hidden;
 
@@ -287,7 +306,7 @@ header {
         }
     }
 
-    .centerbox {
+    .centerbox {display: none;
         position: relative;
 
         .subscribebox {
@@ -363,6 +382,8 @@ header {
                     .title {
                         display: flex;
                         justify-content: space-between;
+                        height: 5em;
+                        align-items: center;
 
                         h3 {
                             max-width: 50rem;
@@ -370,7 +391,6 @@ header {
                         }
 
                         .date {
-                            margin-top: 2rem;
                             @include datestyle;
                         }
 
@@ -395,9 +415,10 @@ header {
                     }
 
                     .title {
-                        margin-right: 1rem;
+                        padding: 0 1rem;
                         position: absolute;
                         display: flex;
+                        height: auto;
                         bottom: 2rem;
                         flex-direction: column;
                         color: rgba(245, 245, 245, 0.95);
@@ -490,13 +511,7 @@ header {
                 line-height: 1.7;
             }
 
-            .btn_read {
-                @include btn_read;
-                background: #f5f5f5;
-                color: #151515;
-                margin-right: 2rem;
-                margin-top: 3rem;
-            }
+            
         }
 
         .magazine {
