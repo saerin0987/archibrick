@@ -22,22 +22,25 @@ $(document).ready(function () {
         $('header .gnb').mouseleave(function(){
             $('header .lnb,header .lnb_bg').stop().fadeOut(150)
         })
+
     });
 
+    function setLineHeight() {
+        let bodyHeight = $("body").prop("scrollHeight"); // body의 전체 높이 가져오기
+        $(".line2, .line3").css("height", bodyHeight + "px");
+    }
+
     $(document).ready(function () {
-        function setLineHeight() {
-            let bodyHeight = $("body").prop("scrollHeight"); // body의 전체 높이 가져오기
-            $(".line2, .line3").css("height", bodyHeight + "px");
-        }
+       
     
         setLineHeight(); // 페이지 로드 시 실행
         $(window).resize(setLineHeight); // 창 크기 변경 시 다시 적용
     });
 
     // 페이지 로드 시 적용
-    window.onload = setLineHeight;
+    // window.onload = setLineHeight;
     // 창 크기 변경 시 다시 계산
-    window.onresize = setLineHeight;
+    // window.onresize = setLineHeight;
 
     ////visual img 를 header 제외한 높이로 설정////
     // $(document).ready(function() {
